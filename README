@@ -1,0 +1,4 @@
+Implementation of logic within a rdf-graph
+==========================================
+
+This package implements builtin logic for rdflib.
