@@ -49,6 +49,8 @@ class TestParsingPlugin(unittest.TestCase):
         f1 = Fact(lastname="sdf")
         net.add_fact(f1)
 
+        net.run(2)
+
 
 if __name__=='__main__':
     logging.basicConfig( level=logging.WARNING )
