@@ -10,22 +10,9 @@ import rdflib.parser
 import rdflib.plugin
 
 from rdflib import compare
+import durable.lang as rls
+import durable.engine as rls_engine
 
-import py_rete as rete
-#from py_rete import conditions
-from py_rete.conditions import Cond
-from py_rete.conditions import Ncc
-from py_rete.common import WME
-from py_rete.common import Token
-from py_rete.common import V
-from py_rete.fact import Fact
-from py_rete.network import ReteNetwork
-from py_rete.production import Production
-from py_rete.conditions import AND
-from py_rete.conditions import Bind
-from py_rete.conditions import OR
-from py_rete.conditions import NOT
-from py_rete.conditions import Filter
 
 
 #import importlib.resources
@@ -40,16 +27,39 @@ class TestParsingPlugin(unittest.TestCase):
         #                       "rdflib_rif", "RIFXMLParser")
 
     def test_pyrete(self):
-        @Production(Fact(lastname = V('ln')))
-        def found(ln):
-            print(f"brubru : {ln}")
+        silver = "silver"
+        gold = "gold"
+        new = "new"
+        bronze = "bronze"
+        shopping_cart = "sc"
+        worth = "worth"
+        typeof = "typeof"
+        status = "status"
 
-        net = ReteNetwork()
-        net.add_production(found)
-        f1 = Fact(lastname="sdf")
-        net.add_fact(f1)
+        s, p, o = 'subject', 'predicate', 'object'
+        with rls.ruleset("test"):
+            @rls.when_all(rls.m.subject == 'World',
+                          #rls.c.first << rls.m.subject == 'World',
+                          #rls.c.second << rls.c.first.object == rls.m.subject,
+                          )
+            def say_hello(c: "durable.engine.closure"):
+                print(c)
+            @rls.when_all(rls.m.subject,
+                          rls.m.predicate,
+                          rls.m.object)
+            def ignore(c):
+                pass
+        for f in [{s: "world", p:"a", o:"introobject"},
+                  {s: "World", p:"ab", o:"introobject"},
+                  {s: "world", p:"ab", o:"introobject"},
+                  {s: "World", p:"ab", o:"introobject"},
+                  ]:
+            try:
+                rls.assert_facts('test', (f))
+            except rls_engine.MessageNotHandledException: pass
+            except rls_engine.MessageObservedException: pass
+        print( rls.get_facts('test') )
 
-        net.run(2)
 
 
 if __name__=='__main__':
