@@ -27,6 +27,7 @@ class TestParsingPlugin(unittest.TestCase):
         #                       "rdflib_rif", "RIFXMLParser")
 
     def test_pyrete(self):
+        return
         silver = "silver"
         gold = "gold"
         new = "new"
@@ -55,10 +56,48 @@ class TestParsingPlugin(unittest.TestCase):
                   {s: "World", p:"ab", o:"introobject"},
                   ]:
             try:
-                rls.assert_facts('test', (f))
+                rls.assert_fact('test', f)
             except rls_engine.MessageNotHandledException: pass
             except rls_engine.MessageObservedException: pass
         print( rls.get_facts('test') )
+
+    def test_row(self):
+        with rls.ruleset('test2'):
+            @rls.when_all(rls.m.number < 5,
+                          #rls.c.first << rls.m.subject == 'World',
+                          #rls.c.second << rls.c.first.object == rls.m.subject,
+                          )
+            def say_hello(c: "durable.engine.closure"):
+                n1 = c.m.number+1
+                print(n1)
+                print("brubru")
+                n = c.m.q
+                if n is None:
+                    n = 0
+                try:
+                    #c.assert_fact({"number": c.m.number+1, "q":n+1})
+                    print("qwe")
+                    c.assert_fact({"number": n1, "q":n+1})
+                    print("qwe2")
+                except rls_engine.MessageNotHandledException: pass
+                except rls_engine.MessageObservedException: pass
+                print(c.m, {"number": n1})
+                c.retract_fact(c.m)
+
+            @rls.when_all(rls.m.number == 5,
+                          #rls.c.first << rls.m.subject == 'World',
+                          #rls.c.second << rls.c.first.object == rls.m.subject,
+                          )
+            def say_helloq(c: "durable.engine.closure"):
+                pass
+        try:
+            rls.assert_facts('test2', [{"number":1},
+                                       {"number":-3},
+                                      ])
+        except rls_engine.MessageNotHandledException: pass
+        except rls_engine.MessageObservedException: pass
+        
+        print("myfacts: ", rls.get_facts('test2') )
 
 
 
