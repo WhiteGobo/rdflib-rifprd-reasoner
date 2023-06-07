@@ -1,8 +1,9 @@
 PYTHON3 ?= python3
+PYTHON_TEST ?= pytest
 
 .PHONY: test
 test:
-	pytest
+	$(PYTHON_TEST)
 
 .PHONY: test1
 test1:
