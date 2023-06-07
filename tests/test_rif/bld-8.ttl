@@ -1,0 +1,164 @@
+# RIF focus is _:n0
+# 162 triples
+_:n2 <http://www.w3.org/2007/rif#constname> "pd" .
+_:n2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n1 <http://www.w3.org/2007/rif#object> _:n2 .
+_:n1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Frame> .
+_:n4 <http://www.w3.org/2007/rif#constIRI> "http://purl.org/dc/terms/publisher"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n5 <http://www.w3.org/2007/rif#constIRI> "http://www.w3.org/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Slot> .
+_:n3 <http://www.w3.org/2007/rif#slotkey> _:n4 .
+_:n3 <http://www.w3.org/2007/rif#slotvalue> _:n5 .
+_:n7 <http://www.w3.org/2007/rif#constIRI> "http://purl.org/dc/terms/date"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n8 <http://www.w3.org/2007/rif#value> "2008-04-04"^^<http://www.w3.org/2001/XMLSchema#date> .
+_:n8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Slot> .
+_:n6 <http://www.w3.org/2007/rif#slotkey> _:n7 .
+_:n6 <http://www.w3.org/2007/rif#slotvalue> _:n8 .
+_:n1 <http://www.w3.org/2007/rif#slots>  ( _:n3 _:n6 )  .
+_:n1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Frame> .
+<http://sample.org> <http://www.w3.org/2007/rif#meta> _:n1 .
+<http://sample.org> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Group> .
+_:n10 <http://www.w3.org/2007/rif#varname> "item" .
+_:n10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n11 <http://www.w3.org/2007/rif#varname> "deliverydate" .
+_:n11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n12 <http://www.w3.org/2007/rif#varname> "scheduledate" .
+_:n12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n13 <http://www.w3.org/2007/rif#varname> "diffduration" .
+_:n13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n14 <http://www.w3.org/2007/rif#varname> "diffdays" .
+_:n14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n9 <http://www.w3.org/2007/rif#vars>  ( _:n10 _:n11 _:n12 _:n13 _:n14 )  .
+_:n9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Forall> .
+_:n18 <http://www.w3.org/2007/rif#constIRI> "http://example.com/concepts#perishable"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n17 <http://www.w3.org/2007/rif#op> _:n18 .
+_:n17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n19 <http://www.w3.org/2007/rif#varname> "item" .
+_:n19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n17 <http://www.w3.org/2007/rif#args>  ( _:n19 )  .
+_:n17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n21 <http://www.w3.org/2007/rif#constIRI> "http://example.com/concepts#delivered"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n20 <http://www.w3.org/2007/rif#op> _:n21 .
+_:n20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n22 <http://www.w3.org/2007/rif#varname> "item" .
+_:n22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n23 <http://www.w3.org/2007/rif#varname> "deliverydate" .
+_:n23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n24 <http://www.w3.org/2007/rif#constIRI> "http://example.com/John"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n20 <http://www.w3.org/2007/rif#args>  ( _:n22 _:n23 _:n24 )  .
+_:n20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n26 <http://www.w3.org/2007/rif#constIRI> "http://example.com/concepts#scheduled"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n25 <http://www.w3.org/2007/rif#op> _:n26 .
+_:n25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n27 <http://www.w3.org/2007/rif#varname> "item" .
+_:n27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n28 <http://www.w3.org/2007/rif#varname> "scheduledate" .
+_:n28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n25 <http://www.w3.org/2007/rif#args>  ( _:n27 _:n28 )  .
+_:n25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n30 <http://www.w3.org/2007/rif#varname> "diffduration" .
+_:n30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n29 <http://www.w3.org/2007/rif#left> _:n30 .
+_:n29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Equal> .
+_:n33 <http://www.w3.org/2007/rif#constIRI> "http://www.w3.org/2007/rif-builtin-function#subtract-dateTimes"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n32 <http://www.w3.org/2007/rif#op> _:n33 .
+_:n32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Expr> .
+_:n34 <http://www.w3.org/2007/rif#varname> "deliverydate" .
+_:n34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n35 <http://www.w3.org/2007/rif#varname> "scheduledate" .
+_:n35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n32 <http://www.w3.org/2007/rif#args>  ( _:n34 _:n35 )  .
+_:n32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Expr> .
+_:n31 <http://www.w3.org/2007/rif#content> _:n32 .
+_:n31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#External> .
+_:n29 <http://www.w3.org/2007/rif#right> _:n31 .
+_:n29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Equal> .
+_:n37 <http://www.w3.org/2007/rif#varname> "diffdays" .
+_:n37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n36 <http://www.w3.org/2007/rif#left> _:n37 .
+_:n36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Equal> .
+_:n40 <http://www.w3.org/2007/rif#constIRI> "http://www.w3.org/2007/rif-builtin-function#days-from-duration"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n39 <http://www.w3.org/2007/rif#op> _:n40 .
+_:n39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Expr> .
+_:n41 <http://www.w3.org/2007/rif#varname> "diffduration" .
+_:n41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n39 <http://www.w3.org/2007/rif#args>  ( _:n41 )  .
+_:n39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Expr> .
+_:n38 <http://www.w3.org/2007/rif#content> _:n39 .
+_:n38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#External> .
+_:n36 <http://www.w3.org/2007/rif#right> _:n38 .
+_:n36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Equal> .
+_:n44 <http://www.w3.org/2007/rif#constIRI> "http://www.w3.org/2007/rif-builtin-predicate#numeric-greater-than"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n43 <http://www.w3.org/2007/rif#op> _:n44 .
+_:n43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n45 <http://www.w3.org/2007/rif#varname> "diffdays" .
+_:n45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n46 <http://www.w3.org/2007/rif#value> "10"^^<http://www.w3.org/2001/XMLSchema#integer> .
+_:n46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n43 <http://www.w3.org/2007/rif#args>  ( _:n45 _:n46 )  .
+_:n43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n42 <http://www.w3.org/2007/rif#content> _:n43 .
+_:n42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#External> .
+_:n16 <http://www.w3.org/2007/rif#formulas>  ( _:n17 _:n20 _:n25 _:n29 _:n36 _:n42 )  .
+_:n16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#And> .
+_:n15 <http://www.w3.org/2007/rif#if> _:n16 .
+_:n15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Implies> .
+_:n48 <http://www.w3.org/2007/rif#constIRI> "http://example.com/concepts#reject"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n47 <http://www.w3.org/2007/rif#op> _:n48 .
+_:n47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n49 <http://www.w3.org/2007/rif#constIRI> "http://example.com/John"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n50 <http://www.w3.org/2007/rif#varname> "item" .
+_:n50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n47 <http://www.w3.org/2007/rif#args>  ( _:n49 _:n50 )  .
+_:n47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n15 <http://www.w3.org/2007/rif#then> _:n47 .
+_:n15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Implies> .
+_:n9 <http://www.w3.org/2007/rif#formula> _:n15 .
+_:n9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Forall> .
+_:n52 <http://www.w3.org/2007/rif#varname> "item" .
+_:n52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n51 <http://www.w3.org/2007/rif#vars>  ( _:n52 )  .
+_:n51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Forall> .
+_:n55 <http://www.w3.org/2007/rif#constIRI> "http://example.com/concepts#unsolicited"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n54 <http://www.w3.org/2007/rif#op> _:n55 .
+_:n54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n56 <http://www.w3.org/2007/rif#varname> "item" .
+_:n56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n54 <http://www.w3.org/2007/rif#args>  ( _:n56 )  .
+_:n54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n53 <http://www.w3.org/2007/rif#if> _:n54 .
+_:n53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Implies> .
+_:n58 <http://www.w3.org/2007/rif#constIRI> "http://example.com/concepts#reject"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n57 <http://www.w3.org/2007/rif#op> _:n58 .
+_:n57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n59 <http://www.w3.org/2007/rif#constIRI> "http://example.com/Fred"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+_:n59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Const> .
+_:n60 <http://www.w3.org/2007/rif#varname> "item" .
+_:n60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Var> .
+_:n57 <http://www.w3.org/2007/rif#args>  ( _:n59 _:n60 )  .
+_:n57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Atom> .
+_:n53 <http://www.w3.org/2007/rif#then> _:n57 .
+_:n53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Implies> .
+_:n51 <http://www.w3.org/2007/rif#formula> _:n53 .
+_:n51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Forall> .
+<http://sample.org> <http://www.w3.org/2007/rif#sentences>  ( _:n9 _:n51 )  .
+<http://sample.org> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Group> .
+_:n0 <http://www.w3.org/2007/rif#payload> <http://sample.org> .
+_:n0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Document> .
+_:n0 <http://www.w3.org/2007/rif#directives> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:n0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2007/rif#Document> .
