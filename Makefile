@@ -1,2 +1,4 @@
+PYTHON3 ?= python3
+
 test1:
-	python -m tests.test_simple
+	$(PYTHON3) -m tests.test_simple
