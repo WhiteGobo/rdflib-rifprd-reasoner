@@ -13,6 +13,7 @@ from rdflib import compare
 import durable.lang as rls
 import durable.engine as rls_engine
 
+from rdflib_logic import ruleset
 
 
 import importlib.resources
@@ -29,6 +30,7 @@ class TestParsingPlugin(unittest.TestCase):
         g = rdflib.Graph()
         g.parse(input8bld)
         print(g.serialize())
+        ruleset.from_rdf(g)
 
     def test_pyrete(self):
         return
