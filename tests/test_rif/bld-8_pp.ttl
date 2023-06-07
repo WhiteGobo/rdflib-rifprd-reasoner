@@ -1,0 +1,105 @@
+@prefix ns1: <http://www.w3.org/2007/rif#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://sample.org> a ns1:Group ;
+    ns1:meta [ a ns1:Frame ;
+            ns1:object [ a ns1:Const ;
+                    ns1:constname "pd" ] ;
+            ns1:slots ( [ a ns1:Slot ;
+                        ns1:slotkey [ a ns1:Const ;
+                                ns1:constIRI "http://purl.org/dc/terms/publisher"^^xsd:anyURI ] ;
+                        ns1:slotvalue [ a ns1:Const ;
+                                ns1:constIRI "http://www.w3.org/"^^xsd:anyURI ] ] [ a ns1:Slot ;
+                        ns1:slotkey [ a ns1:Const ;
+                                ns1:constIRI "http://purl.org/dc/terms/date"^^xsd:anyURI ] ;
+                        ns1:slotvalue [ a ns1:Const ;
+                                ns1:value "2008-04-04"^^xsd:date ] ] ) ] ;
+  ns1:sentences ( 
+    [ a ns1:Forall ;
+      ns1:formula [ a ns1:Implies ;
+        ns1:if [ a ns1:And ; ns1:formulas ( 
+          [ a ns1:Atom ;
+            ns1:args ( [ a ns1:Var ; ns1:varname "item" ] ) ;
+            ns1:op [ a ns1:Const ;
+            ns1:constIRI "http://example.com/concepts#perishable"^^xsd:anyURI ]
+          ] [ a ns1:Atom ;
+            ns1:args ( [ a ns1:Var ; ns1:varname "item" 
+                      ] [ a ns1:Var ; ns1:varname "deliverydate" 
+                      ] [ a ns1:Const ; ns1:constIRI "http://example.com/John"^^xsd:anyURI ] 
+            ) ;
+            ns1:op [ a ns1:Const ;
+              ns1:constIRI "http://example.com/concepts#delivered"^^xsd:anyURI ] 
+          ] [ a ns1:Atom ;
+            ns1:args ( [ a ns1:Var ;
+            ns1:varname "item" 
+            ] [ a ns1:Var ;
+            ns1:varname "scheduledate" 
+            ] ) ;
+            ns1:op [ a ns1:Const ;
+            ns1:constIRI "http://example.com/concepts#scheduled"^^xsd:anyURI ] 
+          ] [ a ns1:Equal ;
+            ns1:left [ a ns1:Var ;
+            ns1:varname "diffduration" ] ;
+            ns1:right [ a ns1:External ;
+            ns1:content [ a ns1:Expr ;
+            ns1:args ( [ a ns1:Var ;
+            ns1:varname "deliverydate" ] [ a ns1:Var ;
+            ns1:varname "scheduledate" ] ) ;
+            ns1:op [ a ns1:Const ;
+            ns1:constIRI "http://www.w3.org/2007/rif-builtin-function#subtract-dateTimes"^^xsd:anyURI ] ] ] 
+          ] [ a ns1:Equal ;
+            ns1:left [ a ns1:Var ;
+            ns1:varname "diffdays" ] ;
+            ns1:right [ a ns1:External ;
+            ns1:content [ a ns1:Expr ;
+            ns1:args ( [ a ns1:Var ;
+            ns1:varname "diffduration" ] ) ;
+            ns1:op [ a ns1:Const ;
+            ns1:constIRI "http://www.w3.org/2007/rif-builtin-function#days-from-duration"^^xsd:anyURI ] ] ] 
+          ] [ a ns1:External ;
+            ns1:content [ a ns1:Atom ;
+            ns1:args ( [ a ns1:Var ;
+            ns1:varname "diffdays" ] [ a ns1:Const ;
+            ns1:value 10 ] ) ;
+            ns1:op [ a ns1:Const ;
+            ns1:constIRI "http://www.w3.org/2007/rif-builtin-predicate#numeric-greater-than"^^xsd:anyURI ] ] 
+          ] 
+        ) ] ;
+        ns1:then [ a ns1:Atom ;
+          ns1:args ( [ a ns1:Const ;
+          ns1:constIRI "http://example.com/John"^^xsd:anyURI ] [ a ns1:Var ;
+          ns1:varname "item" ] ) ;
+          ns1:op [ a ns1:Const ;
+          ns1:constIRI "http://example.com/concepts#reject"^^xsd:anyURI ] 
+        ] 
+      ] ;
+      ns1:vars ( [ a ns1:Var ;
+        ns1:varname "item" ] [ a ns1:Var ;
+        ns1:varname "deliverydate" ] [ a ns1:Var ;
+        ns1:varname "scheduledate" ] [ a ns1:Var ;
+        ns1:varname "diffduration" ] [ a ns1:Var ;
+        ns1:varname "diffdays" ] 
+      )
+    ] [ a ns1:Forall ;
+      ns1:formula [ a ns1:Implies ;
+      ns1:if [ a ns1:Atom ;
+      ns1:args ( [ a ns1:Var ;
+      ns1:varname "item" ] ) ;
+      ns1:op [ a ns1:Const ;
+      ns1:constIRI "http://example.com/concepts#unsolicited"^^xsd:anyURI ] ] ;
+      ns1:then [ a ns1:Atom ;
+      ns1:args ( [ a ns1:Const ;
+      ns1:constIRI "http://example.com/Fred"^^xsd:anyURI ] [ a ns1:Var ;
+      ns1:varname "item" ] ) ;
+      ns1:op [ a ns1:Const ;
+      ns1:constIRI "http://example.com/concepts#reject"^^xsd:anyURI ] ] ] ;
+                    ns1:vars ( [ a ns1:Var ;
+                                ns1:varname "item" ] ) 
+    ]
+  ) .
+
+[] a ns1:Document ;
+    ns1:directives () ;
+    ns1:payload <http://sample.org> .
+

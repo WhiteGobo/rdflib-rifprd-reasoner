@@ -15,16 +15,20 @@ import durable.engine as rls_engine
 
 
 
-#import importlib.resources
-#from . import data
-#input8bld = importlib.resources.files(data).joinpath("bld-8.rif")
-#output8bld = importlib.resources.files(data).joinpath("bld-8.ttl")
+import importlib.resources
+from . import test_rif
+input8bld = importlib.resources.files(test_rif).joinpath("bld-8.ttl")
 
 class TestParsingPlugin(unittest.TestCase):
     def setUp(self):
         pass
         #rdflib.plugin.register("rifxml", rdflib.parser.Parser,
         #                       "rdflib_rif", "RIFXMLParser")
+
+    def test_asdf(self):
+        g = rdflib.Graph()
+        g.parse(input8bld)
+        print(g.serialize())
 
     def test_pyrete(self):
         return
