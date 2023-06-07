@@ -4,4 +4,4 @@ test:
 
 .PHONY: test1
 test1:
-	python -m tests.test_simple
+	python -m tests.test_simple -k asdf
