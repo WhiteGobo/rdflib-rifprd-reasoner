@@ -29,8 +29,9 @@ class TestParsingPlugin(unittest.TestCase):
     def test_asdf(self):
         g = rdflib.Graph()
         g.parse(input8bld)
-        print(g.serialize())
-        ruleset.from_rdf(g)
+        #print(g.serialize())
+        qq = ruleset.from_rdf(g)
+        raise NotImplementedError()
 
     def test_pyrete(self):
         return

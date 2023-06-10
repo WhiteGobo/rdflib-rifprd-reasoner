@@ -1,0 +1,39 @@
+@prefix duru: <http://example.com/durablerules#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rif: <http://www.w3.org/2007/rif#> .
+@prefix ex: <http://example.com/myexample#> .
+@prefix uuid: <urn://uuid/> .
+
+uuid:var1 a rif:Var;
+    rif:varname "firstvariable" .
+
+uuid:op1 a rif:Const;
+    rif:constIRI "http://example.com/another_example#Op" .
+
+uuid:cls1 a rif:Const;
+    rif:constIRI "http://example.com/myexample#cls1" .
+
+uuid:cls2 a rif:Const;
+    rif:constIRI "http://example.com/myexample#cls2" .
+
+[] a rif:Group ;
+    rif:sentences (uuid:rule1).
+
+uuid:rule1 a rif:Forall;
+    rif:vars (uuid:var1);
+    rif:pattern [ a rif:Member;
+            rif:class uuid:cls1 ;
+            rif:instance uuid:var1 ] ;
+    rif:formula [ a rif:Implies;
+            rif:if [ a rif:External;
+                rif:content [ a rif:Expr ;
+                    rif:op uuid:op1 ; 
+                    rif:args (uuid:var1)]
+            ];
+            rif:then [ a rif:Assert;
+                    rif:target [a rif:Member ;
+                    rif:class uuid:cls2 ;
+                    rif:instance uuid:var1]
+            ]
+    ] .

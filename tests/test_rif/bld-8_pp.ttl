@@ -42,12 +42,12 @@
             ns1:left [ a ns1:Var ;
             ns1:varname "diffduration" ] ;
             ns1:right [ a ns1:External ;
-            ns1:content [ a ns1:Expr ;
-            ns1:args ( [ a ns1:Var ;
-            ns1:varname "deliverydate" ] [ a ns1:Var ;
-            ns1:varname "scheduledate" ] ) ;
-            ns1:op [ a ns1:Const ;
-            ns1:constIRI "http://www.w3.org/2007/rif-builtin-function#subtract-dateTimes"^^xsd:anyURI ] ] ] 
+		    ns1:content [ a ns1:Expr ;
+		    ns1:args ( [ a ns1:Var ;
+			    ns1:varname "deliverydate" ] [ a ns1:Var ;
+			    ns1:varname "scheduledate" ] ) ;
+		    ns1:op [ a ns1:Const ;
+			    ns1:constIRI "http://www.w3.org/2007/rif-builtin-function#subtract-dateTimes"^^xsd:anyURI ] ] ] 
           ] [ a ns1:Equal ;
             ns1:left [ a ns1:Var ;
             ns1:varname "diffdays" ] ;

@@ -568,10 +568,12 @@
                   <xs:choice>
                      <xs:element ref="Atom"/>
                      <xs:element ref="Frame"/>
+		     <!-- Making this deterministic
                      <xs:group ref="TERM"/>
-                     <xs:sequence>
+		     -->
+		     <xs:sequence>
                         <xs:group ref="TERM"/>
-                        <xs:group ref="TERM"/>
+                        <xs:group ref="TERM" minOccurs="0" maxOccurs="1"/>
                      </xs:sequence>
                   </xs:choice>
                   <xs:attribute name="ordered" type="xs:string" fixed="yes"/>
